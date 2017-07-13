@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <form method="POST">
+            <fieldset class="fieldset">
+            <legend>Username</legend>
+                <input name="username" type="text" value="{{username}}" />
+                <br><label class="error">{{username_error}}</label>
+            </fieldset>
+
+            <fieldset class="fieldset">
+            <legend>Password</legend>
+                <input name="password" type="password" value="{{password}}" />
+                <br><label class="error">{{password_error}}</label>
+            </fieldset>
+
+            <fieldset class="fieldset">
+            <legend>Verify Password</legend>
+                <input name="verify" type="password" value="{{verify}}" />
+                <br><label class="error">{{verify_error}}</label>
+            </fieldset>
+
+            <p><input type="submit" /></p>
+    </form>
+
+{% endblock %}

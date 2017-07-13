@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<p>Don't have an account? Click <a href="/signup">Create Account</a>!</p>
+<form action="/login" method="post">
+    <table>
+        <tr>
+            <td><label for="username">Username</label></td>
+            <td>
+                <input name="username" type="username" value="{{username}}">
+            </td>
+        </tr>
+        <tr>
+            <td><label for="password">Password</label></td>
+            <td>
+                <input name="password" type="password">
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="Login">
+</form>
+{% endblock %}

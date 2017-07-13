@@ -1,24 +1,41 @@
-<!doctype html>
+<!DOCTYPE HTML>
 <html>
 
 <nav>
-<a href="/blog">Main Page</a> |
-<a href="/newpost">New Post</a>
+<a href="/">Home</a> |
+<a href="/blog">Blog</a> |
+<a href="/newpost">New Post</a> |
+<a href='/login'>Login</a> |
+<a href='/logout'>Logout</a>
 </nav>
 
 <br>
 
-    <head>
-        <title>{{title}}</title>
+        <h1>{{title}}</h1>
 
         <style>
-            .error { color: red; }
+        .header { color:blue;
+        }
+        .error { color: red;
+        }
+        .fieldset { width: 600px; 
+                    border:1px solid blue;
+                    color:black;
+        }
         </style>
-        
-    </head>
+
 <body>
 
+    {% with messages = get_flashed_messages(with_categories=True) %}
+        <ul>
+        {% for category, message in messages %}
+            <li class="{{category}}">{{message}}</li>
+        {% endfor %}
+        </ul>
+    {% endwith %}
+
     {% block content %}
+
     {% endblock %}
 
 </body>
